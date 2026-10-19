@@ -1,1 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusha Travels | Premium Cab Service in Anand, Ahmedabad & Vadodara</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F2C59',
+                            navy: '#0B1E3D',
+                            gold: '#FFB800',
+                            goldhover: '#E0A200',
+                            accent: '#25D366'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(15, 44, 89, 0.88), rgba(11, 30, 61, 0.92)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50 antialiased selection:bg-brand-gold selection:text-brand-navy">
 
+    <!-- Top Notice Bar -->
+    <div class="bg-brand-navy text-white text-xs sm:text-sm py-2 px-4 border-b border-blue-900/50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-gold"></i> Anand • Ahmedabad • Vadodara</span>
+                <span class="hidden md:inline-block text-blue-300">|</span>
+                <span class="hidden md:inline-flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-gold"></i> Safe, Sanitized & 24/7 Available</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="tel:+919328596066" class="hover:text-brand-gold transition-colors font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-xs"></i> +91 9328596066
+                </a>
+                <span class="text-blue-300">|</span>
+                <span class="text-gray-300 font-medium">Mr. Jigar Shah</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center text-brand-gold font-bold text-2xl shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold text-brand-blue tracking-tight block leading-none">TRUSHA</span>
+                        <span class="text-xs font-bold text-brand-gold tracking-widest uppercase block mt-1">Travels & Taxi Service</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 font-semibold text-gray-700">
+                    <a href="#home" class="hover:text-brand-blue transition-colors">Home</a>
+                    <a href="#booking" class="hover:text-brand-blue transition-colors">Book Cab</a>
+                    <a href="#cars" class="hover:text-brand-blue transition-colors">Our Cars</a>
+                    <a href="#services" class="hover:text-brand-blue transition-colors">Services</a>
+                    <a href="#routes" class="hover:text-brand-blue transition-colors">Popular Routes</a>
+                    <a href="#why-us" class="hover:text-brand-blue transition-colors">Why Us</a>
+                    <a href="#contact" class="hover:text-brand-blue transition-colors">Contact</a>
+                </nav>
+
+                <!-- Quick Action Header Buttons -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="https://wa.me/919328596066?text=Hello%20Trusha%20Travels,%20I%20want%20to%20inquire%20about%20a%20cab%20booking." target="_blank" class="bg-brand-accent hover:bg-green-600 text-white font-semibold px-4 py-2.5 rounded-xl shadow-md transition-all flex items-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <a href="tel:+919328596066" class="bg-brand-gold hover:bg-brand-goldhover text-brand-navy font-bold px-4 py-2.5 rounded-xl shadow-md transition-all flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <button id="menu-btn" class="lg:hidden text-brand-blue focus:outline-none p-2 rounded-lg hover:bg-gray-100" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block py-2 px-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue">Home</a>
+            <a href="#booking" class="mobile-link block py-2 px-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue">Quick Booking</a>
+            <a href="#cars" class="mobile-link block py-2 px-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue">Our Fleet</a>
+            <a href="#services" class="mobile-link block py-2 px-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue">Our Services</a>
+            <a href="#routes" class="mobile-link block py-2 px-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue">Popular Routes</a>
+            <a href="#contact" class="mobile-link block py-2 px-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-brand-blue">Contact Us</a>
+            <div class="pt-4 flex flex-col gap-2">
+                <a href="tel:+919328596066" class="w-full bg-brand-gold text-brand-navy font-bold py-2.5 rounded-xl text-center shadow">
+                    <i class="fa-solid fa-phone mr-2"></i> Call +91 9328596066
+                </a>
+                <a href="https://wa.me/919328596066" target="_blank" class="w-full bg-brand-accent text-white font-bold py-2.5 rounded-xl text-center shadow">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-[85vh] flex items-center justify-center text-white relative px-4 py-12 lg:py-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            
+            <!-- Hero Left Text Content -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-brand-gold text-sm font-semibold">
+                    <i class="fa-solid fa-star"></i> Top Rated Taxi & Travel Agency in Gujarat
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                    Reliable, Safe & Comfortable <span class="text-brand-gold">Cab Service</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200 font-light max-w-2xl mx-auto lg:mx-0">
+                    Premium outstation & local cab services across <strong class="text-white font-semibold">Anand, Ahmedabad, Vadodara</strong>, and all over Gujarat. Driven by professional & punctual drivers.
+                </p>
+
+                <!-- Vehicle Highlights Badge -->
+                <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3">
+                    <span class="bg-white/10 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-car text-brand-gold"></i> Maruti Suzuki Swift Dzire (4+1)
+                    </span>
+                    <span class="bg-white/10 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-van-shuttle text-brand-gold"></i> Maruti Suzuki Ertiga (6+1)
+                    </span>
+                </div>
+
+                <!-- Call To Actions -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="tel:+919328596066" class="w-full sm:w-auto bg-brand-gold hover:bg-brand-goldhover text-brand-navy font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-phone text-xl"></i> Call Mr. Jigar Shah
+                    </a>
+                    <a href="#booking" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold text-lg px-8 py-4 rounded-xl border border-white/30 backdrop-blur-md transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calculator"></i> Calculate Fare & Book
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Right Quick Booking Form Card -->
+            <div id="booking" class="lg:col-span-5 w-full">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl text-gray-800 border border-white/50">
+                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-gray-200">
+                        <div>
+                            <h2 class="text-xl font-extrabold text-brand-blue">Quick Booking Inquiry</h2>
+                            <p class="text-xs text-gray-500">Get instant quote on WhatsApp</p>
+                        </div>
+                        <span class="w-10 h-10 bg-brand-gold/20 text-brand-navy rounded-full flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-taxi text-brand-blue"></i>
+                        </span>
+                    </div>
+
+                    <form id="booking-form" onsubmit="handleWhatsAppBooking(event)" class="space-y-4">
+                        <!-- Trip Type -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Trip Type</label>
+                            <select id="trip-type" onchange="calculateEstimate()" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm font-medium bg-white">
+                                <option value="One Way">One Way Trip</option>
+                                <option value="Round Trip">Round Trip</option>
+                                <option value="Airport Pickup/Drop">Airport Pickup / Drop</option>
+                                <option value="Local Hourly Package">Local Hourly (8 hrs / 80 km)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pickup & Drop Locations -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Pickup City</label>
+                                <select id="pickup-city" onchange="calculateEstimate()" class="w-full px-3 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm font-medium bg-white">
+                                    <option value="Anand">Anand</option>
+                                    <option value="Ahmedabad">Ahmedabad</option>
+                                    <option value="Vadodara">Vadodara</option>
+                                    <option value="Other Gujarat City">Other City</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Drop Location</label>
+                                <input type="text" id="drop-city" required placeholder="e.g. Vadodara / Airport" oninput="calculateEstimate()" class="w-full px-3 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm font-medium">
+                            </div>
+                        </div>
+
+                        <!-- Car Selection -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Select Vehicle</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="cursor-pointer border-2 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all has-[:checked]:border-brand-blue has-[:checked]:bg-blue-50/50">
+                                    <input type="radio" name="car_choice" value="Maruti Swift Dzire (4+1)" checked onchange="calculateEstimate()" class="hidden">
+                                    <i class="fa-solid fa-car text-xl text-brand-blue mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-800">Swift Dzire</span>
+                                    <span class="text-[10px] text-gray-500">4 Passengers</span>
+                                </label>
+                                <label class="cursor-pointer border-2 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all has-[:checked]:border-brand-blue has-[:checked]:bg-blue-50/50">
+                                    <input type="radio" name="car_choice" value="Maruti Ertiga (6+1)" onchange="calculateEstimate()" class="hidden">
+                                    <i class="fa-solid fa-van-shuttle text-xl text-brand-blue mb-1"></i>
+                                    <span class="text-xs font-bold text-gray-800">Ertiga SUV</span>
+                                    <span class="text-[10px] text-gray-500">6 Passengers</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Travel Date & Time -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Travel Date</label>
+                                <input type="date" id="travel-date" required class="w-full px-3 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm font-medium">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Pickup Time</label>
+                                <input type="time" id="travel-time" required class="w-full px-3 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:outline-none text-sm font-medium">
+                            </div>
+                        </div>
+
+                        <!-- Estimated Pricing Preview -->
+                        <div class="bg-slate-100 p-3 rounded-xl flex items-center justify-between border border-gray-200">
+                            <div>
+                                <span class="text-xs text-gray-500 block font-medium">Estimated Starting Rate</span>
+                                <span id="est-price" class="text-lg font-extrabold text-brand-blue">₹ 14 / km</span>
+                            </div>
+                            <span class="text-[11px] bg-green-100 text-green-800 font-bold px-2 py-1 rounded">Best Price Guarantee</span>
+                        </div>
+
+                        <!-- Form Submit Button -->
+                        <button type="submit" class="w-full bg-brand-accent hover:bg-green-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Book Now via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Statistics / Trust Bar -->
+    <section class="bg-white py-8 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">100%</div>
+                <p class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Punctual & On-Time</p>
+            </div>
+            <div class="p-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">10,000+</div>
+                <p class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Happy Passengers</p>
+            </div>
+            <div class="p-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">24 / 7</div>
+                <p class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Customer Support</p>
+            </div>
+            <div class="p-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1">Clean & AC</div>
+                <p class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Sanitized Vehicles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Fleet Showcase Section -->
+    <section id="cars" class="py-16 lg:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-gold font-bold text-sm tracking-widest uppercase">Our Well-Maintained Vehicles</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-blue mt-2">Choose Your Perfect Travel Ride</h2>
+                <p class="text-gray-600 mt-3 text-base">We maintain all our cars with extreme care, ensuring high cleanliness, powerful air conditioning, and top safety features for every journey.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Fleet Card 1: Swift Dzire -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-gradient-to-tr from-slate-100 to-blue-50 p-6 flex justify-center items-center h-56">
+                            <!-- SVG Sedan Representation -->
+                            <svg class="w-64 h-36 text-brand-blue drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3C13 6.9 11.8 6.5 11 6.5H6c-.8 0-1.6.4-2.1 1.1L2.2 10.1C1.5 11 1 12 1 13v3c0 .6.4 1 1 1h2m15 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path>
+                            </svg>
+                            <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sedan Class</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900">Maruti Suzuki Swift Dzire</h3>
+                                    <p class="text-sm text-gray-500 font-medium">4 + 1 Seater Comfortable Sedan</p>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 text-sm mt-4">Ideal for small families, business travelers, daily intercity commutes, and quick airport pickups/drops with full luggage space.</p>
+
+                            <!-- Features List -->
+                            <div class="mt-6 space-y-2 border-t border-gray-100 pt-4 text-xs font-semibold text-gray-700">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-5 font-bold"></i> Capacity: 4 Passengers + Driver</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Powerful AC & Clean Plush Interiors</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Spacious Boot Space for Bags</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Best For: Local Trips & Fast Outstation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://wa.me/919328596066?text=Hi%20Trusha%20Travels,%20I%20want%20to%20book%20Swift%20Dzire" target="_blank" class="w-full bg-brand-blue hover:bg-brand-navy text-white font-bold py-3 rounded-xl text-center block shadow transition-colors">
+                            Book Swift Dzire
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fleet Card 2: Maruti Ertiga -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-gradient-to-tr from-slate-100 to-amber-50 p-6 flex justify-center items-center h-56">
+                            <!-- SVG SUV/MUV Representation -->
+                            <svg class="w-64 h-36 text-brand-navy drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 17h1m16 0h1M3 12l2-5h10l3 5M4 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 13v4h20v-4H2z"></path>
+                            </svg>
+                            <span class="absolute top-4 left-4 bg-brand-gold text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Premium SUV / MUV</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900">Maruti Suzuki Ertiga</h3>
+                                    <p class="text-sm text-gray-500 font-medium">6 + 1 Seater Spacious SUV</p>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 text-sm mt-4">Perfect for larger family vacations, group road trips, long outstation journeys across Gujarat, and heavy luggage trips.</p>
+
+                            <!-- Features List -->
+                            <div class="mt-6 space-y-2 border-t border-gray-100 pt-4 text-xs font-semibold text-gray-700">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Capacity: 6 Passengers + Driver</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Dual AC Vents for Rear Passengers</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Ample Legroom & Reclining Seats</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Best For: Outstation Tours & Group Trips</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://wa.me/919328596066?text=Hi%20Trusha%20Travels,%20I%20want%20to%20book%20Ertiga" target="_blank" class="w-full bg-brand-blue hover:bg-brand-navy text-white font-bold py-3 rounded-xl text-center block shadow transition-colors">
+                            Book Ertiga
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered -->
+    <section id="services" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-bold text-sm tracking-widest uppercase">What We Provide</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-blue mt-2">Comprehensive Cab Services</h2>
+                <p class="text-gray-600 mt-3">Tailored travel solutions designed for ultimate safety, flexibility, and convenience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gray-100 hover:border-brand-gold/50 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-blue-100 text-brand-blue rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Outstation Cab Service</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Comfortable one-way or round-trip outstation rides from Anand, Ahmedabad, and Vadodara to anywhere in Gujarat or neighboring states.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gray-100 hover:border-brand-gold/50 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-amber-100 text-brand-gold hover:text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Airport Pickup & Drop</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Punctual transfers to Ahmedabad Airport (AMD) or Vadodara Airport. Never miss a flight with our guaranteed timely pickup.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gray-100 hover:border-brand-gold/50 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Local City Taxi</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Full day or half day hourly rental packages for local shopping, family visits, business meetings, and local sightseeing.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gray-100 hover:border-brand-gold/50 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Corporate & Business Rides</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Professional executive car rental services for corporate travel, client pickups, and business trips across Gujarat's commercial hubs.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gray-100 hover:border-brand-gold/50 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-synagogue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Pilgrimage & Tour Packages</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Customized family tour packages for Somnath, Dwarka, Statue of Unity, Ambaji, Gir National Park, and Palitana.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gray-100 hover:border-brand-gold/50 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">24/7 Emergency Cab Dispatch</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Need a urgent midnight ride? Call Mr. Jigar Shah directly for quick taxi arrangements at any time of day or night.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section id="routes" class="py-16 lg:py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-gold font-bold text-sm tracking-widest uppercase">Frequently Traveled Routes</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-blue mt-2">Popular Intercity Routes & Fares</h2>
+                <p class="text-gray-600 mt-3">Affordable, fixed, and transparent pricing with no unexpected hidden charges.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Route Card 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200 flex flex-col justify-between hover:border-brand-blue transition-all">
+                    <div>
+                        <div class="flex items-center justify-between font-bold text-gray-900 text-lg mb-2">
+                            <span>Anand</span>
+                            <i class="fa-solid fa-arrow-right-long text-brand-gold"></i>
+                            <span>Ahmedabad</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-road mr-1"></i> Approx. 75 km | 1.5 Hours Drive</p>
+                        <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 font-semibold text-gray-700">
+                            <div class="flex justify-between"><span>Swift Dzire (4+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                            <div class="flex justify-between"><span>Ertiga (6+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919328596066?text=I%20want%20to%20book%20cab%20for%20Anand%20to%20Ahmedabad" target="_blank" class="mt-4 text-center block w-full bg-brand-blue text-white py-2 rounded-lg font-bold text-xs hover:bg-brand-navy">Book Route</a>
+                </div>
+
+                <!-- Route Card 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200 flex flex-col justify-between hover:border-brand-blue transition-all">
+                    <div>
+                        <div class="flex items-center justify-between font-bold text-gray-900 text-lg mb-2">
+                            <span>Anand</span>
+                            <i class="fa-solid fa-arrow-right-long text-brand-gold"></i>
+                            <span>Vadodara</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-road mr-1"></i> Approx. 45 km | 1 Hour Drive</p>
+                        <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 font-semibold text-gray-700">
+                            <div class="flex justify-between"><span>Swift Dzire (4+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                            <div class="flex justify-between"><span>Ertiga (6+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919328596066?text=I%20want%20to%20book%20cab%20for%20Anand%20to%20Vadodara" target="_blank" class="mt-4 text-center block w-full bg-brand-blue text-white py-2 rounded-lg font-bold text-xs hover:bg-brand-navy">Book Route</a>
+                </div>
+
+                <!-- Route Card 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200 flex flex-col justify-between hover:border-brand-blue transition-all">
+                    <div>
+                        <div class="flex items-center justify-between font-bold text-gray-900 text-lg mb-2">
+                            <span>Ahmedabad</span>
+                            <i class="fa-solid fa-arrow-right-long text-brand-gold"></i>
+                            <span>Vadodara</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-road mr-1"></i> Approx. 110 km (Expressway)</p>
+                        <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 font-semibold text-gray-700">
+                            <div class="flex justify-between"><span>Swift Dzire (4+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                            <div class="flex justify-between"><span>Ertiga (6+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919328596066?text=I%20want%20to%20book%20cab%20for%20Ahmedabad%20to%20Vadodara" target="_blank" class="mt-4 text-center block w-full bg-brand-blue text-white py-2 rounded-lg font-bold text-xs hover:bg-brand-navy">Book Route</a>
+                </div>
+
+                <!-- Route Card 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200 flex flex-col justify-between hover:border-brand-blue transition-all">
+                    <div>
+                        <div class="flex items-center justify-between font-bold text-gray-900 text-lg mb-2">
+                            <span>Anand / Vadodara</span>
+                            <i class="fa-solid fa-arrow-right-long text-brand-gold"></i>
+                            <span>Statue of Unity</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-road mr-1"></i> Kevadia Day Tour Package</p>
+                        <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 font-semibold text-gray-700">
+                            <div class="flex justify-between"><span>Swift Dzire (4+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                            <div class="flex justify-between"><span>Ertiga (6+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919328596066?text=I%20want%20to%20inquire%20for%20Statue%20of%20Unity%20Tour" target="_blank" class="mt-4 text-center block w-full bg-brand-blue text-white py-2 rounded-lg font-bold text-xs hover:bg-brand-navy">Book Route</a>
+                </div>
+
+                <!-- Route Card 5 -->
+                <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200 flex flex-col justify-between hover:border-brand-blue transition-all">
+                    <div>
+                        <div class="flex items-center justify-between font-bold text-gray-900 text-lg mb-2">
+                            <span>Anand</span>
+                            <i class="fa-solid fa-arrow-right-long text-brand-gold"></i>
+                            <span>Ahmedabad Airport</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-plane text-brand-blue mr-1"></i> Direct Flight Pickup / Drop</p>
+                        <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 font-semibold text-gray-700">
+                            <div class="flex justify-between"><span>Swift Dzire (4+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                            <div class="flex justify-between"><span>Ertiga (6+1):</span> <span class="text-brand-blue font-bold">Best Tariff</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919328596066?text=I%20need%20Airport%20Drop%20from%20Anand" target="_blank" class="mt-4 text-center block w-full bg-brand-blue text-white py-2 rounded-lg font-bold text-xs hover:bg-brand-navy">Book Route</a>
+                </div>
+
+                <!-- Route Card 6 -->
+                <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200 flex flex-col justify-between hover:border-brand-blue transition-all">
+                    <div>
+                        <div class="flex items-center justify-between font-bold text-gray-900 text-lg mb-2">
+                            <span>Outstation Gujarat</span>
+                            <i class="fa-solid fa-earth-asia text-brand-gold"></i>
+                            <span>Any Destination</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4"><i class="fa-solid fa-map-pin mr-1"></i> Somnath, Dwarka, Surat, Mumbai, etc.</p>
+                        <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 font-semibold text-gray-700">
+                            <div class="flex justify-between"><span>Per KM Rate:</span> <span class="text-brand-blue font-bold">Highly Competitive</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919328596066?text=I%20have%20a%20custom%20outstation%20trip%20inquiry" target="_blank" class="mt-4 text-center block w-full bg-brand-blue text-white py-2 rounded-lg font-bold text-xs hover:bg-brand-navy">Inquire Custom Trip</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-16 lg:py-24 bg-brand-navy text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-bold text-sm tracking-widest uppercase">Why Choose Trusha Travels</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Your Comfort & Safety Is Our Top Priority</h2>
+                <p class="text-gray-300 mt-3">We take pride in offering customer-centric cab services with personalized care by Mr. Jigar Shah.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Experienced Drivers</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Polite, experienced, and well-trained drivers who know Gujarat routes thoroughly.</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">No hidden charges or unexpected surprises. Fixed & clear toll/km pricing shared upfront.</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-clock-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">On-Time Service</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">We strictly respect your timing. Cab reaches your doorstep before scheduled pickup time.</p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Clean & Hygienic</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Regularly serviced, sanitized, and fresh smelling cars for a peaceful journey experience.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Contact & Owner Info Section -->
+    <section id="contact" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-900 to-brand-blue rounded-3xl p-8 sm:p-12 text-white shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    
+                    <div>
+                        <span class="bg-brand-gold text-brand-navy text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Direct Contact Owner</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mt-4">Need A Quick Taxi? Contact Mr. Jigar Shah Directly</h2>
+                        <p class="text-gray-300 mt-4 text-sm sm:text-base">Whether you need immediate dispatch, price quotes for tours, or future bookings, we are available round the clock.</p>
+
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-brand-gold text-xl">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 uppercase font-semibold block">Contact Person</span>
+                                    <span class="text-lg font-bold">Mr. Jigar Shah</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-brand-gold text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 uppercase font-semibold block">Mobile Number</span>
+                                    <a href="tel:+919328596066" class="text-xl font-bold hover:text-brand-gold transition-colors">+91 9328596066</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-brand-gold text-xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 uppercase font-semibold block">Primary Operational Hubs</span>
+                                    <span class="text-base font-bold">Anand • Ahmedabad • Vadodara (Gujarat)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Call & WhatsApp Action Card -->
+                    <div class="bg-white text-gray-900 rounded-2xl p-8 shadow-xl space-y-6">
+                        <h3 class="text-2xl font-extrabold text-brand-blue text-center">Instant Connect</h3>
+                        <p class="text-gray-600 text-sm text-center">Click below to directly call or chat on WhatsApp with Mr. Jigar Shah for immediate vehicle availability.</p>
+
+                        <div class="space-y-4 pt-2">
+                            <a href="tel:+919328596066" class="w-full bg-brand-gold hover:bg-brand-goldhover text-brand-navy font-bold py-4 rounded-xl text-center shadow-lg transition-all flex items-center justify-center gap-3 text-lg">
+                                <i class="fa-solid fa-phone-volume text-xl"></i> Click To Call (+91 9328596066)
+                            </a>
+
+                            <a href="https://wa.me/919328596066?text=Hi%20Jigar%20Shah,%20I%20am%20looking%20for%20a%20cab%20service." target="_blank" class="w-full bg-brand-accent hover:bg-green-600 text-white font-bold py-4 rounded-xl text-center shadow-lg transition-all flex items-center justify-center gap-3 text-lg">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+
+                        <div class="text-center text-xs text-gray-500 pt-2 border-t border-gray-100">
+                            <i class="fa-solid fa-clock mr-1 text-green-500"></i> Instant response guaranteed 24 hours a day.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-gray-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-brand-gold rounded-lg flex items-center justify-center text-brand-navy font-bold text-xl">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <span class="text-2xl font-extrabold text-white">TRUSHA TRAVELS</span>
+                    </div>
+                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+                        Premier cab & travel agency operating in Anand, Ahmedabad, and Vadodara. Dedicated to safe, affordable, and punctual road journeys with clean Maruti Swift Dzire & Ertiga cars.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-brand-gold transition-colors">Home</a></li>
+                        <li><a href="#booking" class="hover:text-brand-gold transition-colors">Book Cab Online</a></li>
+                        <li><a href="#cars" class="hover:text-brand-gold transition-colors">Our Fleet (Dzire & Ertiga)</a></li>
+                        <li><a href="#services" class="hover:text-brand-gold transition-colors">Services Offered</a></li>
+                        <li><a href="#routes" class="hover:text-brand-gold transition-colors">Popular Gujarat Routes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Detail -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase mb-4 tracking-wider">Contact Details</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="text-gray-300 font-semibold"><i class="fa-solid fa-user text-brand-gold mr-2"></i> Mr. Jigar Shah</li>
+                        <li><a href="tel:+919328596066" class="hover:text-brand-gold transition-colors"><i class="fa-solid fa-phone text-brand-gold mr-2"></i> +91 9328596066</a></li>
+                        <li><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Anand, Ahmedabad, Vadodara</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; <span id="year"></span> Trusha Travels. All rights reserved.</p>
+                <p class="flex items-center gap-1">Provided with <i class="fa-solid fa-heart text-red-500"></i> by Mr. Jigar Shah</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Sticky Action Buttons for Mobile Screen -->
+    <div class="fixed bottom-4 right-4 z-40 flex flex-col gap-3 sm:hidden">
+        <a href="https://wa.me/919328596066?text=Hi%20Trusha%20Travels,%20I%20want%20to%20book%20a%20cab." target="_blank" class="w-14 h-14 bg-brand-accent text-white rounded-full flex items-center justify-center text-2xl shadow-2xl border-2 border-white" aria-label="WhatsApp Us">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919328596066" class="w-14 h-14 bg-brand-gold text-brand-navy rounded-full flex items-center justify-center text-xl shadow-2xl border-2 border-white" aria-label="Call Us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Set default date in date picker to today
+        document.getElementById('travel-date').valueAsDate = new Date();
+
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dynamic Fare Estimation Function
+        function calculateEstimate() {
+            const tripType = document.getElementById('trip-type').value;
+            const carChoice = document.querySelector('input[name="car_choice"]:checked').value;
+            const estPriceEl = document.getElementById('est-price');
+
+            if (tripType === "Local Hourly Package") {
+                if (carChoice.includes("Dzire")) {
+                    estPriceEl.textContent = "₹ 2,200 / 8 Hrs (80 KM)";
+                } else {
+                    estPriceEl.textContent = "₹ 3,200 / 8 Hrs (80 KM)";
+                }
+            } else if (tripType === "Airport Pickup/Drop") {
+                if (carChoice.includes("Dzire")) {
+                    estPriceEl.textContent = "₹ 1,800 Approx.";
+                } else {
+                    estPriceEl.textContent = "₹ 2,500 Approx.";
+                }
+            } else {
+                if (carChoice.includes("Dzire")) {
+                    estPriceEl.textContent = "₹ 12 - 14 / km";
+                } else {
+                    estPriceEl.textContent = "₹ 16 - 18 / km";
+                }
+            }
+        }
+
+        // Send Form Data directly formatted to WhatsApp
+        function handleWhatsAppBooking(e) {
+            e.preventDefault();
+
+            const tripType = document.getElementById('trip-type').value;
+            const pickupCity = document.getElementById('pickup-city').value;
+            const dropCity = document.getElementById('drop-city').value;
+            const carChoice = document.querySelector('input[name="car_choice"]:checked').value;
+            const travelDate = document.getElementById('travel-date').value;
+            const travelTime = document.getElementById('travel-time').value;
+
+            const whatsappMessage = `*NEW CAB BOOKING INQUIRY - TRUSHA TRAVELS*%0A%0A` +
+                `*Trip Type:* ${encodeURIComponent(tripType)}%0A` +
+                `*Pickup City:* ${encodeURIComponent(pickupCity)}%0A` +
+                `*Drop Location:* ${encodeURIComponent(dropCity)}%0A` +
+                `*Vehicle Choice:* ${encodeURIComponent(carChoice)}%0A` +
+                `*Travel Date:* ${encodeURIComponent(travelDate)}%0A` +
+                `*Travel Time:* ${encodeURIComponent(travelTime)}%0A%0A` +
+                `Hello Mr. Jigar Shah, please confirm cab availability and total rate for this trip.`;
+
+            const whatsappUrl = `https://wa.me/919328596066?text=${whatsappMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
